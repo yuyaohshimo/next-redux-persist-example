@@ -13,16 +13,14 @@ const bindMiddleware = (middleware) => {
 
 const makeStore = (context: Context) => {
   const isServer = typeof window === 'undefined';
-  if (isServer) {
-    return createStore(
-      reducer,
-      bindMiddleware([thunkMiddleware, persistMiddleware]),
-    );
-  }
   const store = createStore(
     reducer,
     bindMiddleware([thunkMiddleware, persistMiddleware]),
   );
+  if (isServer) {
+    return store;
+  }
+
   store['__persistor'] = persistStore(store); // Nasty hack
   return store;
 };
