@@ -1,10 +1,16 @@
-const initialState = {
+export interface IAuthState {
+  payload: {
+    accessToken: string;
+  };
+}
+
+const initialState: IAuthState = {
   payload: {
     accessToken: '',
   },
 };
 
-const auth = (state = initialState, action) => {
+const auth = (state = initialState, action): IAuthState => {
   switch (action.type) {
     case 'SIGNIN_SUCCESS':
       return {

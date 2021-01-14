@@ -1,8 +1,12 @@
 import { useSelector } from 'react-redux';
 import Link from 'next/link';
 
+import { IAuthState } from 'store/auth';
+
 const Top = () => {
-  const accessToken = useSelector(({ auth }) => auth.payload.accessToken);
+  const accessToken = useSelector(
+    ({ auth }: { auth: IAuthState }) => auth.payload.accessToken,
+  );
   return (
     <div>
       <h1>Top Page</h1>
