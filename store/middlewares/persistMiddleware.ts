@@ -6,7 +6,7 @@ const persistMiddleware: Middleware = (store) => (dispatch) => async (
 ) => {
   if (action.type === REHYDRATE && action.key === 'root') {
     console.log('root REHYDRATE');
-    await dispatch(action);
+    dispatch(action);
   } else {
     dispatch(action);
   }

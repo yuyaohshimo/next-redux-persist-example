@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "next-sitemap",
     "start": "next start"
   },
   "repository": {
@@ -21,6 +20,7 @@
   },
   "homepage": "https://github.com/yuyaohshimo/next-redux-persist-example#readme",
   "dependencies": {
+    "js-cookie": "^2.2.1",
     "next": "^10.0.5",
     "next-redux-wrapper": "^6.0.2",
     "react": "^17.0.1",
